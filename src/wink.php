@@ -35,7 +35,7 @@ class wink
         'powerstrip_id' => self::DEVICE_PIVOTPOWERGENIUS,
     );
     
-    private $debug = 1;
+    private $debug = 0;
 
     public function __construct()
     {
