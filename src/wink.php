@@ -53,7 +53,7 @@ class wink
      */
     public function authPassword($clientID, $clientSecret, $username, $password)
     {
-        $auth = json_decode(file_get_contents("/tmp/nimbus_{$username}.json"));
+        $auth = json_decode(@file_get_contents("/tmp/nimbus_{$username}.json"));
         if ($auth && $auth->timestamp==date("Ym")) {
             $this->access_token = $auth->access_token;
             $this->refresh_token = $auth->refresh_token;
