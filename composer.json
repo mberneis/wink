@@ -1,6 +1,6 @@
 {
     "name": "ianmaddox/wink",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "A PHP library for Quirky's Wink service.",
     "license": "TBD",
     "authors": [

@@ -22,13 +22,9 @@ namespace ianmaddox\wink;
 class wink {
 
 	const API_HOST = 'winkapi.quirky.com';
-	const DEVICE_EGGMINDER = 'eggminder';
 	const DEVICE_NIMBUS = 'nimbus';
 	const DEVICE_NIMBUSDIAL = 'nimbusDial';
 	const DEVICE_PIVOTPOWERGENIUS = 'pivotPowerGenius';
-	const DEVICE_PORKFOLIO = 'porkfolio';
-	const DEVICE_SPOTTER = 'spotter';
-	const DEVICE_GELINK_LIGHTBULB = 'geLinkLightbulb';
 
 	private $access_token;
 	private $refresh_token;
@@ -36,11 +32,7 @@ class wink {
 	private $devices;
 	private $deviceMap = array(
 		'cloud_clock_id' => self::DEVICE_NIMBUS,
-		'eggtray_id' => self::DEVICE_EGGMINDER,
 		'powerstrip_id' => self::DEVICE_PIVOTPOWERGENIUS,
-		'piggy_bank_id' => self::DEVICE_PORKFOLIO,
-		'sensor_pod_id' => self::DEVICE_SPOTTER,
-		'light_bulb_id' => self::DEVICE_GELINK_LIGHTBULB
 	);
 	
 	private $debug = 1;
