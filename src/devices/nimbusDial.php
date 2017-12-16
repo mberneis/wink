@@ -84,17 +84,26 @@ class nimbusDial extends \ianmaddox\wink\device {
 	 * @param int $deg
 	 * @return type
 	 */
-	public function setDegrees($deg) {
-		// Normalize the input.
-		$deg = $deg < 0 ? 360 + $deg % 360 : $deg % 360;
-		$deg = $deg == 0 ? 360 : (int) $deg;
-		return $this->setData(array(
-					'value' => $deg,
-					'channel_configuration' =>
-					array('channel_id' => self::TEMPLATE_MANUAL)
-						)
-		);
-	}
+    public function setDegrees($deg, $minmax = 30)
+    {
+        // Normalize the input.
+        // $deg = $deg < 0 ? 360 + $deg % 360 : $deg % 360;
+        // $deg = $deg == 0 ? 360 : (int) $deg;
+        return $this->setData(
+            array(
+            'value' => (int) $deg,
+            'channel_configuration' => array(
+                'channel_id' => self::TEMPLATE_MANUAL
+            ),
+            'dial_configuration' => array(
+                'min_value' => -$minmax,
+                'max_value' => $minmax,
+                'scale_type' =>'linear'
+                )
+            )
+        );
+    }
+
 
 	/**
 	 * Set the main display and alternate display text for the dial
